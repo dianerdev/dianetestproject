@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <h1 class="heading-large">
+    Check your answers before sending your application
+  </h1>
+
+  <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium">
+            Summary
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Your details
+        </td>
+        <td>
+          Exporter name<br>
+          First line of address<br>
+          Second line of address<br>
+          Contact: Contact Name<br>
+          Tel: 01234 567 890<br>
+          Email: email@email.com
+        </td>
+        <td class="change-answer">
+          <a href="aboutyou">
+            Change <span class="visuallyhidden">About you</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Type of licence
+        </td>
+        <td>
+          Licence name
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Type of Licence</span>
+          </a>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+  <h2 class="heading-medium">Now send your application</h2>
+
+  <p class="text">
+    By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.
+  </p>
+
+  <div class="form-group">
+    <a href="confirmpage" class="button">Accept and send application</a>
+  </div>
+
+</main>
+
+{% endblock %}

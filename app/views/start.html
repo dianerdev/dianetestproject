@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html"%}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+    	<h1 class="heading-xlarge">Before you start</h1>
+    	<p>Use this service to:</p>
+    	<ul class="list list-bullet">
+    		<li>Apply for a licence</li>
+    	</ul>
+    	<p>Registering takes around 5 minutes</p>	
+    	<a class="button button-start" href="aboutyou.html" role="button">Start now</a>
+    	<br></br>
+    	<h4>Before you start</h4>
+    	<p>You can also <a href="https://www.gov.uk/contact/govuk">register by post</a>.</p>
+    	<p>You can't register for this service if you're in the UK illegally.</p>
+    </div>
+    <div class="column-third">
+
+      <aside class="govuk-related-items" role="complementary">
+        <h2 class="heading-medium" id="subsection-title">Other Services</h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="font-xsmall">
+            <li><a href="https://www.gov.uk/shotgun-and-firearm-certificates">Shotgun and firearm certificates</a></li>
+            <li><a href="https://www.gov.uk/licence-wild-animal">Wild animal licence</a></li>
+            <li><a href="https://www.gov.uk/tv-licence">TV licence</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+</main>
+{% endblock %}    
