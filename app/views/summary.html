@@ -32,15 +32,13 @@
           Your details
         </td>
         <td>
-          Exporter name<br>
-          First line of address<br>
-          Second line of address<br>
-          Contact: Contact Name<br>
-          Tel: 01234 567 890<br>
-          Email: email@email.com
+          {{details['full-name-f1']}}<br>
+          {{details['dob-day']}}/{{details['dob-month']}}/{{details['dob-year']}}<br>
+          {{details.address}}<br>
+          
         </td>
         <td class="change-answer">
-          <a href="aboutyou">
+          <a href="aboutyou?edit=true">
             Change <span class="visuallyhidden">About you</span>
           </a>
         </td>
@@ -50,10 +48,10 @@
           Type of licence
         </td>
         <td>
-          Licence name
+          {{typeoflicence['radio-group']}}
         </td>
         <td class="change-answer">
-          <a href="#">
+          <a href="typeoflicence.html">
             Change <span class="visuallyhidden">Type of Licence</span>
           </a>
         </td>

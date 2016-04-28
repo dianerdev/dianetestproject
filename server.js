@@ -6,6 +6,7 @@ var path = require('path'),
     app = express(),
     basicAuth = require('basic-auth'),
     bodyParser = require('body-parser'),
+    cookieParser = require('cookie-parser')
     config = require(__dirname + '/app/config.js'),
     port = (process.env.PORT || config.port),
     utils = require(__dirname + '/lib/utils.js'),
@@ -51,7 +52,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-
+app.use(cookieParser());
 // send assetPath to all views
 app.use(function (req, res, next) {
   res.locals.asset_path="/public/";

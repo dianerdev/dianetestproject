@@ -6,9 +6,9 @@
   <div class="grid-row">
     <div class="column-two-thirds">
     	<h1 class="heading-xlarge">About you</h1>
-    <form>	
+    <form action="aboutyou" method="post">	
     	<label class="form-label" for="full-name-f1">Full name</label>
-  		<input class="form-control" id="full-name-f1" type="text">
+  		<input class="form-control" name="full-name-f1"id="full-name-f1" type="text" {% if details %} value="{{details['full-name-f1']}}" {% endif %}>
 
 
      
@@ -26,17 +26,17 @@
 
             <div class="form-group form-group-day">
               <label for="dob-day">Day</label>
-              <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+              <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint" {% if details %} value="{{details['dob-day']}}" {% endif %}>
             </div>
 
             <div class="form-group form-group-month">
               <label for="dob-month">Month</label>
-              <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+              <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12" {% if details %} value="{{details['dob-month']}}" {% endif %}>
             </div>
 
             <div class="form-group form-group-year">
               <label for="dob-year">Year</label>
-              <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
+              <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016" {% if details %} value="{{details['dob-year']}}" {% endif %}>
             </div>
           </div>
           
@@ -44,10 +44,12 @@
         </div>
         <div class="form-group form-group-address">
               <label for="address">Address</label>
-        <textarea class="form-control" rows="5">
+        <textarea name="address" class="form-control" rows="5" {% if details %} value="{{details['address']}}" {% endif %}>
         </textarea>
+       
         </div>
-        <a class="button button-start" href="#" role="button">Continue</a>
+        <input name="button" type="submit" class="button" {%if edit %} value="Save changes" {% else%} value="Continue"{% endif %}>
+        
       </form>
 
     </div>

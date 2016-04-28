@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html"%}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+    	<h1 class="heading-xlarge">About you</h1>
+    	<form action="typeoflicence" method="post">
+    <fieldset>
+
+      <legend class="visuallyhidden">What type of licence do you require?</legend>
+
+      <label class="block-label" for="radio-1">
+        <input id="radio-1" type="radio" name="radio-group" value="Firearm Licence">
+        Firearm Licence
+      </label>
+      <label class="block-label" for="radio-2">
+        <input id="radio-2" type="radio" name="radio-group" value="TV Licence">
+        TV Licence
+      </label>
+     
+      <label class="block-label" for="radio-3">
+        <input id="radio-3" type="radio" name="radio-group" value="Wild Animal Licence">
+        Wild Animal Licence
+      </label>
+      <label class="block-label" for="radio-4">
+        <input id="radio-4" type="radio" name="radio-group" value="Gambling Licence">
+        Gambling Licence
+      </label>
+      <label class="block-label" for="radio-5">
+        <input id="radio-5" type="radio" name="radio-group" value="Alcohol Licence">
+        Alcohol Licence
+      </label>
+    
+    </fieldset>
+  <br></br>
+  <input type="submit" class="button" value="Continue">
+  </form>
+  </div>
+  </div>
+</main>
+{% endblock %}  
