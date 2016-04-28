@@ -6,6 +6,9 @@
   <div class="grid-row">
     <div class="column-two-thirds">
     	<h1 class="heading-xlarge">About you</h1>
+ {{error}}
+</div>
+      
     <form action="aboutyou" method="post">	
     	<label class="form-label" for="full-name-f1">Full name</label>
   		<input class="form-control" name="full-name-f1"id="full-name-f1" type="text" {% if details %} value="{{details['full-name-f1']}}" {% endif %}>
@@ -43,9 +46,19 @@
         </fieldset>
         </div>
         <div class="form-group form-group-address">
-              <label for="address">Address</label>
-        <textarea name="address" class="form-control" rows="5" {% if details %} value="{{details['address']}}" {% endif %}>
-        </textarea>
+      <label for="address">Address</label>
+      <label class="form-label" for="addressline1"></label>
+      <input class="form-control" name="addressline1"id="addressline1" type="text" {% if details %} value="{{details.addressline1}}" {% endif %}>
+      <p></p>
+      <label class="form-label" for="addressline2"></label>
+      <input class="form-control" name="addressline2"id="addressline2" type="text" {% if details %} value="{{details.addressline2}}" {% endif %}>
+      <p></p>
+      <label class="form-label" for="addressline3"></label>
+      <input class="form-control" name="addressline3"id="addressline3" type="text" {% if details %} value="{{details.addressline3}}" {% endif %}>
+      <p></p>
+      <label for="postcode">Postcode</label>
+      <label class="form-label" for="postcode"></label>
+      <input class="form-control" name="postcode"id="postcode" type="text" {% if details %} value="{{details.postcode}}" {% endif %}>
        
         </div>
         <input name="button" type="submit" class="button" {%if edit %} value="Save changes" {% else%} value="Continue"{% endif %}>

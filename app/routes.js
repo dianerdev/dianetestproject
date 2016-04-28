@@ -9,18 +9,27 @@ router.get('/', function (req, res) {
 
 router.post('/aboutyou', function(req, res){
   res.cookie('aboutyou', req.body);
-  if (req.body.button=="Continue"){
-  res.redirect('typeoflicence');}
-  else {
-  res.redirect('summary');  
-  }
+  var validpostcode =/[A-Z]{1,2}[0-9][0-9A-Z]?\s?[0-9][A-Z]{2}/.test(req.body.postcode);
+ if (validpostcode) {
+
+    if (req.body.button=="Continue"){
+    res.redirect('typeoflicence');}
+    else {
+    res.redirect('summary');  
+    }
+   }
+else {
+  var details=req.cookies.aboutyou;
+  var edit=req.query.edit;
+  res.render('aboutyou', {details:details, edit:edit, error:'Postcode invalid'});
+} 
 });
 
 router.get('/aboutyou', function (req, res) {
 var details=req.cookies.aboutyou;
 var edit=req.query.edit;
 
-  res.render('aboutyou', {details:details, edit:edit});
+  res.render('aboutyou', {details:details, edit:edit, error:' '});
 });
 
 router.post('/typeoflicence', function(req, res){
